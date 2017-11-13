@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Http.OData.Query;
+using System.Web.OData.Query;
 using Awesome.Data.Sql.Builder.OData.Handlers;
 using Awesome.Data.Sql.Builder.Select;
 
@@ -28,7 +28,7 @@ namespace Awesome.Data.Sql.Builder.OData
 
             results.Add(select);
 
-            if (queryOptions.InlineCount != null && queryOptions.InlineCount.Value == InlineCountValue.AllPages)
+            if (queryOptions.Count != null && queryOptions.Count.Value)
             {
                 results.Add(select.ToCount());
             }

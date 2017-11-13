@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http.OData.Query;
+using System.Web.OData.Query;
 using Awesome.Data.Sql.Builder.Select;
-using Microsoft.Data.OData.Query.SemanticAst;
+using Microsoft.OData.UriParser;
 
 namespace Awesome.Data.Sql.Builder.OData.Handlers
 {

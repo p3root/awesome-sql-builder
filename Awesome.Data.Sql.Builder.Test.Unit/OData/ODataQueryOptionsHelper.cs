@@ -1,8 +1,9 @@
 ﻿using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.OData;
-using System.Web.Http.OData.Builder;
-using System.Web.Http.OData.Query;
+using System.Web.OData;
+using System.Web.OData.Builder;
+using System.Web.OData.Query;
+using System.Web.OData.Routing;
 
 namespace Awesome.Data.Sql.Builder.Test.Unit.OData
 {
@@ -15,7 +16,7 @@ namespace Awesome.Data.Sql.Builder.Test.Unit.OData
             modelBuilder.EntitySet<T>("Set");
             var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost/?" + odataQueryString);
             var model = modelBuilder.GetEdmModel();
-            return new ODataQueryOptions<T>(new ODataQueryContext(model, typeof(T)), request);
+            return new ODataQueryOptions<T>(new ODataQueryContext(model, typeof(T), new ODataPath()), request);
         }
     }
 }
